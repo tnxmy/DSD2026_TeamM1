@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSD2026 · Team M1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+<!-- ════════ NAVBAR — FIX #1: order Project→Architecture→Mission→Team→Responsibilities→Workflow ════ -->
+<nav>
+  <div class="nav-logo">DSD2026 · <span>Team M1</span></div>
+  <ul class="nav-links">
+    <li><a href="#project" class="active">Project</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#responsibilities">Responsibilities</a></li>
+    <li><a href="#workflow">Workflow</a></li>
+  </ul>
+</nav>
+
+<!-- ════════ HERO — FIX #3: value cards, not nav links ════════ -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-universities">
+      UTAD <span class="utag">PT</span>
+      <span class="sep"> | </span>
+      Jilin University <span class="utag">CN</span>
+    </div>
+    <h1 class="hero-title">
+      Limb Motion Recognition<br>
+      &amp; <span class="accent">Assistant</span>
+    </h1>
+    <p class="hero-subtitle">M1 · Frontend Mobile</p>
+    <p class="hero-tagline">
+      Delivering real-time rehabilitation feedback where it matters most —
+      <strong>in the patient's hands.</strong>
+    </p>
+
+    <!-- FIX #3 -->
+    <div class="hero-cards">
+      <div class="hero-card">
+        <div class="hero-card-label">Focus</div>
+        <div class="hero-card-title">Frontend Mobile Dev</div>
+        <div class="hero-card-desc">Patient-facing mobile app for real-time rehabilitation</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Interface</div>
+        <div class="hero-card-title">Real-Time Feedback</div>
+        <div class="hero-card-desc">Live sensor data turned into clear patient guidance</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Platform</div>
+        <div class="hero-card-title">HarmonyOS / Android</div>
+        <div class="hero-card-desc">Cross-platform mobile development exposure</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Context</div>
+        <div class="hero-card-title">Cross-Cultural Collab</div>
+        <div class="hero-card-desc">Distributed teamwork across PT &amp; CN timezones</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<!-- ════════ 1. PROJECT OVERVIEW ════════════════════════════ -->
+<section id="project">
+  <div class="container">
+    <p class="section-label reveal">Project Overview</p>
+    <h2 class="reveal">Limb Motion Recognition &amp; Assistant</h2>
+    <p class="section-intro reveal">A distributed rehabilitation system developed between UTAD (Portugal) and Jilin University (China). 28 students across 6 teams are building a system that captures limb motion from wearable sensors, processes data on a central server, and delivers real-time feedback through patient and clinician applications.</p>
+
+    <div class="project-grid">
+      <div class="stat-card reveal reveal-d1">
+        <div class="stat-num">28</div>
+        <div class="stat-label">Students across 6 specialized teams</div>
+      </div>
+      <div class="stat-card reveal reveal-d2">
+        <div class="stat-num">3</div>
+        <div class="stat-label">System layers: Sensor · Server · Monitor</div>
+      </div>
+      <div class="stat-card wide reveal reveal-d3">
+        The system captures limb motion via IMU wearable sensors (S1, S2), processes and classifies movement data through AI inference on a central server (V1, V2), and presents real-time feedback to patients and clinicians through dedicated mobile and web applications (M1, M2). Team M1 is exclusively responsible for the patient-facing mobile application — the Monitor layer's patient endpoint.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 2. SYSTEM ARCHITECTURE — FIX #2 (moved up) + FIX #6 ════ -->
+<section id="architecture">
+  <div class="container">
+    <p class="section-label reveal">System Architecture</p>
+    <h2 class="reveal">How the System Works</h2>
+    <p class="section-intro reveal">The system is divided into three layers, each owned by dedicated teams. M1 operates within the Monitor layer — the patient-facing endpoint of the full pipeline.</p>
+
+    <!-- Visual flow -->
+    <div class="arch-flow reveal">
+      <div class="arch-layer">
+        <div class="arch-layer-lbl">Sensor Layer</div>
+        <div class="arch-node orange">S1</div>
+        <div class="arch-node orange">S2</div>
+      </div>
+      <div class="arch-connector">
+        <div class="if-lbl">IF1</div>
+        <div class="arrow"></div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-layer-lbl">Server Layer</div>
+        <div class="arch-node blue">V1</div>
+        <div class="arch-node blue">V2</div>
+      </div>
+      <div class="arch-connector">
+        <div class="if-lbl">IF2</div>
+        <div class="arrow"></div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-layer-lbl">Monitor Layer</div>
+        <div class="arch-node cyan">M1 ★</div>
+        <div class="arch-node green">M2</div>
+      </div>
+    </div>
+
+    <!-- Layer / Team / Lead / Core Function / Responsibility -->
+    <div class="arch-table-wrap reveal">
+      <table class="arch-table">
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Team</th>
+            <th>Lead</th>
+            <th>Core Function</th>
+            <th>Responsibility</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tbadge orange">Sensor</span></td>
+            <td><span class="tbadge dim">S1</span></td>
+            <td>Zhihang Yu</td>
+            <td>Firmware &amp; Wireless Protocol</td>
+            <td>Sensor firmware, data transmission protocol, IF1 definition</td>
+          </tr>
+          <tr>
+            <td><span class="tbadge orange">Sensor</span></td>
+            <td><span class="tbadge dim">S2</span></td>
+            <td>Zhiqi Zhang</td>
+            <td>Data Acquisition &amp; Mock Pipeline</td>
+            <td>Data pipeline, mock sensor generator, IF1 co-definition</td>
+          </tr>
+          <tr>
+            <td><span class="tbadge blue">Server</span></td>
+            <td><span class="tbadge dim">V1</span></td>
+            <td>Diogo Borges</td>
+            <td>AI Motion Recognition Engine</td>
+            <td>AI inference, motion analysis, angle comparison</td>
+          </tr>
+          <tr>
+            <td><span class="tbadge blue">Server</span></td>
+            <td><span class="tbadge dim">V2</span></td>
+            <td>Sergio Moniz</td>
+            <td>API Gateway &amp; Data Infrastructure</td>
+            <td>REST/WebSocket API, database, IF2 contract, integration lead</td>
+          </tr>
+          <!-- M1 row — THIS team, clearly distinguished -->
+          <tr class="m1-row">
+            <td><span class="tbadge cyan">Monitor</span></td>
+            <td>
+              <span class="tbadge cyan">M1</span>
+              <span class="this-tag">This Team</span>
+            </td>
+            <td style="color:var(--cyan);font-weight:700;">Diogo Pinhel</td>
+            <td style="color:var(--text);">Patient Mobile Application</td>
+            <td style="color:var(--text);">Real-time UI, motion visualisation, posture feedback, WebSocket integration</td>
+          </tr>
+          <tr>
+            <td><span class="tbadge green">Monitor</span></td>
+            <td><span class="tbadge dim">M2</span></td>
+            <td>Yihang Li</td>
+            <td>Clinical Dashboard</td>
+            <td>Historical data visualisation, analytics, clinician interface</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 3. MISSION — FIX #2 (after architecture) ════════ -->
+<section id="mission">
+  <div class="container">
+    <p class="section-label reveal">M1 Role &amp; Mission</p>
+    <h2 class="reveal">The Patient's Window Into Recovery</h2>
+    <p class="section-intro reveal">Team M1 is responsible for the patient-facing mobile application — the primary interface through which rehabilitation patients receive real-time feedback on their limb movements. We build the experience that turns raw data into clear, reassuring, and actionable guidance.</p>
+
+    <div class="mission-quote reveal">
+      "The interface is not a layer on top of the system.<br>
+      <em>For the patient, it is the system.</em>"
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal reveal-d1">
+        <div class="pillar-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3>Fast &amp; Responsive</h3>
+        <p>Low-latency mobile UI that keeps pace with real-time sensor data.</p>
+      </div>
+      <div class="pillar reveal reveal-d2">
+        <div class="pillar-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/></svg>
+        </div>
+        <h3>Clear &amp; Intuitive</h3>
+        <p>Motion visualisations designed for patients, not engineers.</p>
+      </div>
+      <div class="pillar reveal reveal-d3">
+        <div class="pillar-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Reassuring &amp; Reliable</h3>
+        <p>Consistent alerts and feedback that patients can trust during recovery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 4. TEAM & STRUCTURE ════════════════════════════ -->
+<section id="team">
+  <div class="container">
+    <p class="section-label reveal">Team &amp; Structure</p>
+    <h2 class="reveal">The People Behind M1</h2>
+
+    <div class="team-grid">
+      <div class="member-card reveal reveal-d1">
+        <div class="member-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="member-nat">PT</div>
+        <div class="member-name">Diogo Pinhel</div>
+        <div class="member-role">Team Lead / Software Architect</div>
+        <div class="member-desc">Leads team coordination, sprint planning, and owns the app architecture. Manages the IF2 API contract with the Server team and acts as primary contact for the Steering Committee.</div>
+      </div>
+      <div class="member-card reveal reveal-d2">
+        <div class="member-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="member-nat">CN</div>
+        <div class="member-name">Yiding Wang</div>
+        <div class="member-role">Vice Team Lead</div>
+        <div class="member-desc">Supports cross-timezone leadership, coordinates the Chinese side, and bridges communication between institutions.</div>
+      </div>
+      <div class="member-card reveal reveal-d3">
+        <div class="member-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="member-nat">PT</div>
+        <div class="member-name">Sara Costa</div>
+        <div class="member-role">Programmer / Tester</div>
+        <div class="member-desc">Develops mobile features and performs cross-testing to ensure quality across the application.</div>
+      </div>
+      <div class="member-card reveal reveal-d4">
+        <div class="member-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="member-nat">CN</div>
+        <div class="member-name">Enhe Zhang</div>
+        <div class="member-role">Programmer / Tester</div>
+        <div class="member-desc">Develops mobile features and performs cross-testing to ensure quality across the application.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 5. RESPONSIBILITIES ════════════════════════════ -->
+<section id="responsibilities">
+  <div class="container">
+    <p class="section-label reveal">Responsibilities</p>
+    <h2 class="reveal">What We Build</h2>
+
+    <div class="resp-grid">
+      <div class="resp-card reveal reveal-d1">
+        <div class="resp-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Real-Time Rehabilitation Feedback</h3>
+        <p>Display live motion data from wearable sensors, giving patients immediate feedback during exercises.</p>
+      </div>
+      <div class="resp-card reveal reveal-d2">
+        <div class="resp-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M2 12s4-8 10-8 10 8 10 8-4 8-10 8-10-8-10-8z"/></svg>
+        </div>
+        <h3>Motion Visualisation</h3>
+        <p>Render limb movements in intuitive visual formats so patients can understand their progress.</p>
+      </div>
+      <div class="resp-card hl reveal reveal-d3">
+        <div class="resp-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Posture Correction &amp; Alerts</h3>
+        <p>Detect incorrect postures and alert patients with clear corrective guidance in real time.</p>
+      </div>
+      <div class="resp-card reveal reveal-d1">
+        <div class="resp-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        </div>
+        <h3>Push Notifications</h3>
+        <p>Notify patients of scheduled exercises, progress milestones, and clinician messages.</p>
+      </div>
+      <div class="resp-card reveal reveal-d2">
+        <div class="resp-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+        </div>
+        <h3>IF2 Backend Integration</h3>
+        <p>Consume data from the Server layer via the IF2 interface contract, ensuring reliable data flow to the Monitor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 6. WORKFLOW — FIX #7: hover matching member cards ════ -->
+<section id="workflow">
+  <div class="container">
+    <p class="section-label reveal">Collaboration &amp; Workflow</p>
+    <h2 class="reveal">How We Work Together</h2>
+
+    <div class="workflow-cols">
+      <div>
+        <div class="wf-col-title reveal">Tools</div>
+        <div class="tools-grid">
+          <div class="tool-card reveal reveal-d1">
+            <div class="tool-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="tool-info">
+              <h4>GitHub</h4>
+              <p>Version control, feature branches, pull request reviews, and CI.</p>
+            </div>
+          </div>
+          <div class="tool-card reveal reveal-d2">
+            <div class="tool-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="tool-info">
+              <h4>WeChat</h4>
+              <p>Primary async channel for the Chinese sub-team and cross-team updates.</p>
+            </div>
+          </div>
+          <div class="tool-card reveal reveal-d3">
+            <div class="tool-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="tool-info">
+              <h4>Discord</h4>
+              <p>Primary async channel for the Portuguese sub-team and document sharing.</p>
+            </div>
+          </div>
+          <div class="tool-card reveal reveal-d4">
+            <div class="tool-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <div class="tool-info">
+              <h4>VooV Meeting</h4>
+              <p>Weekly video syncs bridging the 7-hour timezone gap between PT and CN.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="wf-col-title reveal">Methodology</div>
+        <ul class="method-list">
+          <li class="reveal reveal-d1">Weekly cross-timezone sync meetings</li>
+          <li class="reveal reveal-d2">Async communication across WeChat &amp; Discord</li>
+          <li class="reveal reveal-d3">Feature-branch Git workflow with PR reviews</li>
+          <li class="reveal reveal-d4">Cross-testing between Portuguese and Chinese developers</li>
+          <li class="reveal reveal-d5">Daily Scrum board updates via GitHub Projects</li>
+          <li class="reveal">Shared documentation and meeting minutes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-left">DSD2026 · Team M1 · UTAD × Jilin University</div>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="#project">Project</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#responsibilities">Responsibilities</a></li>
+      <li><a href="#workflow">Workflow</a></li>
+    </ul>
+    <div class="footer-icons">
+      <a href="#" aria-label="GitHub">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      </a>
+      <a href="#" aria-label="Email">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════ FIX #5: SCROLL PROGRESS BUTTON ════════════════ -->
+<button id="scroll-btn" aria-label="Back to top">
+  <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="22" cy="22" r="20" class="sbg"/>
+    <circle cx="22" cy="22" r="19" class="strack"/>
+    <circle cx="22" cy="22" r="19" class="sring" id="sring"/>
+    <polyline points="15,25 22,17 29,25" class="sarrow"/>
+  </svg>
+</button>
+
+<script src="transitions.js"></script>
+</body>
+</html>
