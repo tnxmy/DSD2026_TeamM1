@@ -103,8 +103,8 @@
     <div class="arch-flow reveal">
       <div class="arch-layer">
         <div class="arch-layer-lbl">Sensor Layer</div>
-        <div class="arch-node orange">S1</div>
-        <div class="arch-node orange">S2</div>
+        <div class="arch-node orange">S1 - Firmware & Protocol</div>
+        <div class="arch-node orange">S2 - Data Acquisition</div>
       </div>
       <div class="arch-connector">
         <div class="if-lbl">IF1</div>
@@ -112,8 +112,8 @@
       </div>
       <div class="arch-layer">
         <div class="arch-layer-lbl">Server Layer</div>
-        <div class="arch-node blue">V1</div>
-        <div class="arch-node blue">V2</div>
+        <div class="arch-node blue">V1 - AI Motion Recognition</div>
+        <div class="arch-node blue">V2 - API Gateway</div>
       </div>
       <div class="arch-connector">
         <div class="if-lbl">IF2</div>
@@ -121,8 +121,8 @@
       </div>
       <div class="arch-layer">
         <div class="arch-layer-lbl">Monitor Layer</div>
-        <div class="arch-node cyan">M1 ★</div>
-        <div class="arch-node green">M2</div>
+        <div class="arch-node green monitor-main">M1 - Patient Mobile App&nbsp;★</div>
+        <div class="arch-node green">M2 - Clinical Dashboard</div>
       </div>
     </div>
 
@@ -169,11 +169,11 @@
           </tr>
           <!-- M1 row — THIS team, clearly distinguished -->
           <tr class="m1-row">
-            <td><span class="tbadge cyan">Monitor</span></td>
+            <td><span class="tbadge green monitor-main">Monitor</span></td>
             <td>
-              <span class="tbadge cyan">M1&nbsp;★</span>
+              <span class="tbadge green monitor-main">M1&nbsp;★</span>
             </td>
-            <td style="color:var(--cyan);font-weight:700;">Diogo Pinhel</td>
+            <td style="color:#34d399;font-weight:700;">Diogo Pinhel</td>
             <td style="color:var(--text);">Patient Mobile Application</td>
             <td style="color:var(--text);">Real-time UI, motion visualisation, posture feedback, WebSocket integration</td>
           </tr>
