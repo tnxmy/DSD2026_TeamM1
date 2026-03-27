@@ -539,6 +539,8 @@ h2 {
   margin-bottom: 1rem;
   color: var(--cyan);
 }
+.pillar-icon svg { width: 17px; height: 17px; stroke-width: 2; }
+.pillar-icon i { font-size: 17px; line-height: 1; }
 .pillar h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem; }
 .pillar p  { font-size: 0.82rem; color: var(--text-dim); line-height: 1.55; }
 
@@ -651,6 +653,8 @@ h2 {
   flex-shrink: 0;
   color: var(--cyan);
 }
+.tool-icon svg { width: 15px; height: 15px; stroke-width: 2; }
+.tool-icon i { font-size: 15px; line-height: 1; }
 .tool-info h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 0.25rem; }
 .tool-info p  { font-size: 0.72rem; color: var(--text-dim); line-height: 1.45; }
 .method-list {
