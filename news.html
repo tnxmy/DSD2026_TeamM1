@@ -4,18 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News - M1 Project</title>
-  <!-- 这里引用了你 index.html 相同的样式表，确保字体和颜色一致 -->
+  <!-- 引用你的主样式表 -->
   <link rel="stylesheet" href="style.css">
   <style>
-    /* 针对新闻页面的特殊微调样式 */
-    .news-card {
+    /* 针对新闻列表的专用样式 */
+    .news-list {
+      margin-top: 2rem;
+    }
+    .news-item {
       padding: 2rem;
       border-bottom: 1px solid var(--line-color);
-      transition: transform 0.2s ease;
+      transition: all 0.2s ease;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      background: var(--bg-color);
+      border: 1px solid var(--line-color);
     }
-    .news-card:hover {
+    .news-item:hover {
       background-color: var(--bg-alt);
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
     .news-date {
       font-size: 0.85rem;
@@ -29,28 +37,21 @@
       font-size: 1.5rem;
       color: var(--text-main);
     }
+    .news-title a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .news-title a:hover {
+      color: var(--accent-color);
+    }
     .news-excerpt {
       line-height: 1.6;
       color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-    }
-    .read-more {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: var(--accent-color);
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: opacity 0.2s;
-    }
-    .read-more:hover {
-      opacity: 0.8;
+      margin-bottom: 0;
     }
     /* 移动端适配 */
     @media (max-width: 768px) {
-      .news-card { padding: 1.5rem; }
+      .news-item { padding: 1.5rem; }
       .news-title { font-size: 1.25rem; }
     }
   </style>
@@ -80,38 +81,26 @@
         <h1 style="margin-bottom: 3rem;">Latest Updates & Announcements</h1>
       </div>
 
-      <!-- 新闻列表容器 -->
+      <!-- 新闻列表容器 (自动循环生成) -->
       <div class="news-list">
-
-        <!-- 新闻条目 1 (最新) -->
-        <article class="news-card reveal">
-          <span class="news-date">April 05, 2026</span>
-          <h2 class="news-title">UI Framework Selection Complete</h2>
+        
+        <!-- Jekyll 会自动遍历 _posts 文件夹里的文件 -->
+        {% for post in site.posts %}
+        <article class="news-item reveal">
+          <!-- 显示日期 -->
+          <span class="news-date">{{ post.date | date: "%B %d, %Y" }}</span>
+          
+          <!-- 显示标题 (带链接) -->
+          <h2 class="news-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          
+          <!-- 显示摘要 (如果没有写摘要，会自动截取文章前50个字) -->
           <p class="news-excerpt">
-            After evaluating multiple cross-platform solutions, the team voted to proceed with HarmonyOS development tools to ensure optimal performance on the target mobile devices.
+            {{ post.excerpt | strip_html | truncate: 100 }}
           </p>
-          <a href="#" class="read-more">Read Details &rarr;</a>
         </article>
-
-        <!-- 新闻条目 2 -->
-        <article class="news-card reveal">
-          <span class="news-date">April 03, 2026</span>
-          <h2 class="news-title">Project Kickoff & Repository Setup</h2>
-          <p class="news-excerpt">
-            The M1 team held its first coordination meeting. We established the GitHub repository structure and finalized the initial UI mockups for the patient rehabilitation interface.
-          </p>
-          <a href="#" class="read-more">Read Details &rarr;</a>
-        </article>
-
-        <!-- 新闻条目 3 -->
-        <article class="news-card reveal">
-          <span class="news-date">March 28, 2026</span>
-          <h2 class="news-title">Initial Concept Design</h2>
-          <p class="news-excerpt">
-            Drafted the preliminary sketches for the wearable sensor placement. The design focuses on comfort and minimal invasiveness for elderly patients.
-          </p>
-          <a href="#" class="read-more">Read Details &rarr;</a>
-        </article>
+        {% endfor %}
 
       </div>
     </div>
