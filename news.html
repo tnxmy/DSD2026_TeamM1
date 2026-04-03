@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News - M1 Project</title>
-    <!-- 依然引用你的 style.css -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* 保持之前的样式不变 */
+        /* 保持样式一致 */
         .news-list { margin-top: 2rem; }
-        .news-item { padding: 2rem; border-bottom: 1px solid #eee; margin-bottom: 1rem; border-radius: 8px; background: #fff; border: 1px solid #eee; }
+        .news-item { padding: 2rem; border-bottom: 1px solid #eee; margin-bottom: 1rem; border-radius: 8px; background: #fff; border: 1px solid #eee; transition: transform 0.2s; }
+        .news-item:hover { transform: translateY(-2px); background: #fafafa; }
         .news-date { font-size: 0.85rem; color: #888; font-family: monospace; display: block; margin-bottom: 0.5rem; }
         .news-title { margin: 0 0 1rem 0; font-size: 1.5rem; }
         .news-title a { text-decoration: none; color: #333; }
         .news-title a:hover { color: #007bff; }
-        .news-excerpt { line-height: 1.6; color: #666; }
+        .news-excerpt { line-height: 1.6; color: #666; margin: 0; }
     </style>
 </head>
 <body>
@@ -42,10 +42,10 @@
 
       <div class="news-list">
         <!-- 
-           核心代码在这里 
-           如果这里显示为空，说明 GitHub 还没识别出 posts
+           注意：这里改成了 site.news 
+           并且使用了 reversed 来让最新的排在前面
         -->
-        {% for post in site.posts %}
+        {% for post in site.news reversed %}
         <article class="news-item reveal">
           <span class="news-date">{{ post.date | date: "%Y-%m-%d" }}</span>
           <h2 class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
@@ -53,7 +53,7 @@
         </article>
         {% endfor %}
         
-        <!-- 如果上面没显示内容，请检查 _posts 文件夹 -->
+        <!-- 如果这里什么都没显示，说明 news-folder 里没有文件，或者文件格式不对 -->
       </div>
     </div>
   </main>
