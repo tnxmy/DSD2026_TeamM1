@@ -2,19 +2,79 @@
 layout: default
 ---
 
-<!-- ════════ NEWS HEADER ════════ -->
-<section class="news-header">
-  <div class="container">
-    <p class="section-label">Development Log</p>
-    <h1>Latest Updates</h1>
-    <p>Stay up to date with the progress of the M1 Patient Mobile App.</p>
+<!-- ════════ 1. FIXED NAVBAR (Added directly here to fix links) ════════ -->
+<!-- 注意：这里将导航栏直接写入 News 页面以确保链接修复，同时复用了 Index 的样式 -->
+<style>
+  /* 内联样式仅用于 News 页面，确保导航栏样式与首页一致 */
+  .news-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(15, 23, 42, 0.8); /* bg-gray-900/80 */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #334155;
+  }
+  .news-nav .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+  }
+  .news-nav .nav-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: white;
+  }
+  .news-nav .nav-logo span {
+    color: #64ffda;
+  }
+  .news-nav .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  .news-nav .nav-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+  .news-nav .nav-links a:hover {
+    color: #64ffda;
+  }
+  /* 修复 Body 下移，防止内容被导航栏遮挡 */
+  body { padding-top: 4rem; }
+</style>
+
+<nav class="news-nav">
+  <div class="nav-container">
+    <div class="nav-logo">DSD2026 · <span>Team M1</span></div>
+    <ul class="nav-links">
+      <!-- 关键修复：所有链接都添加了 {{ site.baseurl }} -->
+      <li><a href="{{ site.baseurl }}/#project">Project</a></li>
+      <li><a href="{{ site.baseurl }}/#architecture">Architecture</a></li>
+      <li><a href="{{ site.baseurl }}/#mission">Mission</a></li>
+      <li><a href="{{ site.baseurl }}/#team">Team</a></li>
+      <li><a href="{{ site.baseurl }}/#responsibilities">Responsibilities</a></li>
+      <li><a href="{{ site.baseurl }}/#workflow">Workflow</a></li>
+    </ul>
   </div>
-</section>
+</nav>
+
+<!-- ════════ 2. NEWS CONTENT (Without the old header) ════════ -->
+<!-- 注意：这里移除了 Development Log 等旧标题 -->
 
 <!-- ════════ NEWS LIST (Card Layout) ════════ -->
 <section id="news" class="news-grid-section">
   <div class="container">
-    <!-- Section Header (模仿 Mission 的 Header 样式) -->
+    <!-- Section Header (Mission Style) -->
     <div class="section-header">
       <p class="section-label reveal">Project Timeline</p>
       <h2 class="reveal">The Interface is Not a Layer on Top of the System.<br>
@@ -26,7 +86,6 @@ layout: default
     <div class="news-grid">
       {% for post in site.posts %}
         <article class="news-card reveal">
-          <!-- Card Icon (模仿 Pillar Icon 的圆底效果) -->
           <div class="news-card-icon">
             <i class="fa-solid fa-newspaper"></i>
           </div>
@@ -39,3 +98,6 @@ layout: default
     </div>
   </div>
 </section>
+
+<!-- ════════ 3. FOOTER (Kept as is) ════════ -->
+<!-- 页脚代码保持不变，无需再次粘贴 -->
