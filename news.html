@@ -1,32 +1,136 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>项目新闻</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
-        .news-item { margin-bottom: 30px; padding: 15px; background: #f9f9f9; border-radius: 5px; }
-        .date { color: #888; font-size: 0.9em; }
-        a { text-decoration: none; color: #333; }
-        a:hover { color: blue; }
-        .back { display: block; margin-top: 20px; color: #666; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News - M1 Project</title>
+  <!-- 这里引用了你 index.html 相同的样式表，确保字体和颜色一致 -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 针对新闻页面的特殊微调样式 */
+    .news-card {
+      padding: 2rem;
+      border-bottom: 1px solid var(--line-color);
+      transition: transform 0.2s ease;
+    }
+    .news-card:hover {
+      background-color: var(--bg-alt);
+      transform: translateY(-2px);
+    }
+    .news-date {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-family: monospace;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .news-title {
+      margin: 0 0 1rem 0;
+      font-size: 1.5rem;
+      color: var(--text-main);
+    }
+    .news-excerpt {
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .read-more {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+    .read-more:hover {
+      opacity: 0.8;
+    }
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+      .news-card { padding: 1.5rem; }
+      .news-title { font-size: 1.25rem; }
+    }
+  </style>
 </head>
 <body>
-    <h1>📰 最新新闻</h1>
 
-    <!-- 新闻列表开始 -->
-    <!-- 每发一条新新闻，就在这里复制粘贴一段 <div> -->
-    
-    <div class="news-item">
-        <h2><a href="news-folder/2026-04-03-first-news.md">项目正式启动啦！</a></h2>
-        <p class="date">2026年4月3日</p>
-        <p>这是新闻的简短摘要，吸引大家点击阅读全文...</p>
+  <!-- ════════ 1. NAVBAR ════════════════════════════ -->
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">M1 Project</a>
+      <ul class="nav-links">
+        <li><a href="index.html#mission">Mission</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="index.html#workflow">Workflow</a></li>
+        <li><a href="news.html" class="active">News</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- 新闻列表结束 -->
+  <!-- ════════ 2. NEWS CONTENT ════════════════════════════ -->
+  <main style="padding-top: 100px; padding-bottom: 50px;">
+    <div class="container">
+      
+      <!-- 页面标题 -->
+      <div class="reveal">
+        <p class="section-label">Development Log</p>
+        <h1 style="margin-bottom: 3rem;">Latest Updates & Announcements</h1>
+      </div>
 
-    <a href="index.html" class="back">← 返回主页</a>
+      <!-- 新闻列表容器 -->
+      <div class="news-list">
+
+        <!-- 新闻条目 1 (最新) -->
+        <article class="news-card reveal">
+          <span class="news-date">April 05, 2026</span>
+          <h2 class="news-title">UI Framework Selection Complete</h2>
+          <p class="news-excerpt">
+            After evaluating multiple cross-platform solutions, the team voted to proceed with HarmonyOS development tools to ensure optimal performance on the target mobile devices.
+          </p>
+          <a href="#" class="read-more">Read Details &rarr;</a>
+        </article>
+
+        <!-- 新闻条目 2 -->
+        <article class="news-card reveal">
+          <span class="news-date">April 03, 2026</span>
+          <h2 class="news-title">Project Kickoff & Repository Setup</h2>
+          <p class="news-excerpt">
+            The M1 team held its first coordination meeting. We established the GitHub repository structure and finalized the initial UI mockups for the patient rehabilitation interface.
+          </p>
+          <a href="#" class="read-more">Read Details &rarr;</a>
+        </article>
+
+        <!-- 新闻条目 3 -->
+        <article class="news-card reveal">
+          <span class="news-date">March 28, 2026</span>
+          <h2 class="news-title">Initial Concept Design</h2>
+          <p class="news-excerpt">
+            Drafted the preliminary sketches for the wearable sensor placement. The design focuses on comfort and minimal invasiveness for elderly patients.
+          </p>
+          <a href="#" class="read-more">Read Details &rarr;</a>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════ 3. FOOTER ════════════════════════════ -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p>&copy; 2026 M1 Project Team. All rights reserved.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="index.html#mission">Mission</a></li>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="index.html#workflow">Workflow</a></li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+    </div>
+  </footer>
+
 </body>
 </html>
