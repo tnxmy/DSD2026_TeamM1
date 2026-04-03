@@ -1,64 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News - M1 Project</title>
-  <!-- 引用你的主样式表 -->
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* 针对新闻列表的专用样式 */
-    .news-list {
-      margin-top: 2rem;
-    }
-    .news-item {
-      padding: 2rem;
-      border-bottom: 1px solid var(--line-color);
-      transition: all 0.2s ease;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      background: var(--bg-color);
-      border: 1px solid var(--line-color);
-    }
-    .news-item:hover {
-      background-color: var(--bg-alt);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-    .news-date {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-family: monospace;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-    .news-title {
-      margin: 0 0 1rem 0;
-      font-size: 1.5rem;
-      color: var(--text-main);
-    }
-    .news-title a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .news-title a:hover {
-      color: var(--accent-color);
-    }
-    .news-excerpt {
-      line-height: 1.6;
-      color: var(--text-secondary);
-      margin-bottom: 0;
-    }
-    /* 移动端适配 */
-    @media (max-width: 768px) {
-      .news-item { padding: 1.5rem; }
-      .news-title { font-size: 1.25rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - M1 Project</title>
+    <!-- 依然引用你的 style.css -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 保持之前的样式不变 */
+        .news-list { margin-top: 2rem; }
+        .news-item { padding: 2rem; border-bottom: 1px solid #eee; margin-bottom: 1rem; border-radius: 8px; background: #fff; border: 1px solid #eee; }
+        .news-date { font-size: 0.85rem; color: #888; font-family: monospace; display: block; margin-bottom: 0.5rem; }
+        .news-title { margin: 0 0 1rem 0; font-size: 1.5rem; }
+        .news-title a { text-decoration: none; color: #333; }
+        .news-title a:hover { color: #007bff; }
+        .news-excerpt { line-height: 1.6; color: #666; }
+    </style>
 </head>
 <body>
 
-  <!-- ════════ 1. NAVBAR ════════════════════════════ -->
+  <!-- 导航栏 -->
   <nav>
     <div class="container nav-container">
       <a href="index.html" class="logo">M1 Project</a>
@@ -66,56 +27,43 @@
         <li><a href="index.html#mission">Mission</a></li>
         <li><a href="index.html#team">Team</a></li>
         <li><a href="index.html#workflow">Workflow</a></li>
-        <li><a href="news.html" class="active">News</a></li>
+        <li><a href="news.html">News</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ════════ 2. NEWS CONTENT ════════════════════════════ -->
+  <!-- 主要内容 -->
   <main style="padding-top: 100px; padding-bottom: 50px;">
     <div class="container">
-      
-      <!-- 页面标题 -->
       <div class="reveal">
         <p class="section-label">Development Log</p>
-        <h1 style="margin-bottom: 3rem;">Latest Updates & Announcements</h1>
+        <h1 style="margin-bottom: 3rem;">Latest Updates</h1>
       </div>
 
-      <!-- 新闻列表容器 (自动循环生成) -->
       <div class="news-list">
-        
-        <!-- Jekyll 会自动遍历 _posts 文件夹里的文件 -->
+        <!-- 
+           核心代码在这里 
+           如果这里显示为空，说明 GitHub 还没识别出 posts
+        -->
         {% for post in site.posts %}
         <article class="news-item reveal">
-          <!-- 显示日期 -->
-          <span class="news-date">{{ post.date | date: "%B %d, %Y" }}</span>
-          
-          <!-- 显示标题 (带链接) -->
-          <h2 class="news-title">
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </h2>
-          
-          <!-- 显示摘要 (如果没有写摘要，会自动截取文章前50个字) -->
-          <p class="news-excerpt">
-            {{ post.excerpt | strip_html | truncate: 100 }}
-          </p>
+          <span class="news-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <h2 class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+          <p class="news-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
         </article>
         {% endfor %}
-
+        
+        <!-- 如果上面没显示内容，请检查 _posts 文件夹 -->
       </div>
     </div>
   </main>
 
-  <!-- ════════ 3. FOOTER ════════════════════════════ -->
+  <!-- 页脚 -->
   <footer>
     <div class="container footer-container">
-      <div class="footer-info">
-        <p>&copy; 2026 M1 Project Team. All rights reserved.</p>
-      </div>
+      <p>&copy; 2026 M1 Project Team.</p>
       <ul class="footer-links">
         <li><a href="index.html#mission">Mission</a></li>
-        <li><a href="index.html#team">Team</a></li>
-        <li><a href="index.html#workflow">Workflow</a></li>
         <li><a href="news.html">News</a></li>
       </ul>
     </div>
