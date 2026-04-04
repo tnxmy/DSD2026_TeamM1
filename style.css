@@ -831,7 +831,7 @@ footer {
 
 /* 2. Section Header (匹配 Mission 的标题样式) */
 .section-header .section-label {
-    color: #64ffda;
+    color: var(--cyan);
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 14px;
@@ -848,7 +848,7 @@ footer {
 }
 
 .section-header h2 .quote-em {
-    color: #64ffda;
+    color: var(--cyan);
     font-style: italic;
     font-weight: 400;
 }
@@ -885,7 +885,7 @@ footer {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #0f766e; /* Teal Green Background (类似 M1 的颜色) */
+    background: var(--cyan-dim);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -931,7 +931,7 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #64ffda;
+    color: var(--cyan);
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
