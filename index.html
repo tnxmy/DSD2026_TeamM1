@@ -427,37 +427,6 @@ layout: default
     </div>
   </div>
 </section>
-
-<!-- ════════ NEWS LIST (Card Layout) ════════ -->
-<!-- 修改点：移除了 style="padding: 100px 0; background: #0f172a;"，改为使用全局样式 -->
-<section id="news">
-  <div class="container">
-    <!-- Section Header (Mission Style) -->
-    <div class="section-header">
-      <p class="section-label reveal">Project Timeline</p>
-      <h2 class="reveal">The Interface is Not a Layer on Top of the System.<br>
-        <em class="quote-em">For the Patient, It Is the System.</em>
-      </h2>
-    </div>
-
-    <!-- News Cards Grid -->
-    <div class="news-grid">
-      {% for post in site.posts %}
-        <article class="news-card reveal">
-          <!-- Card Icon -->
-          <div class="news-card-icon">
-            <i class="fa-solid fa-newspaper"></i>
-          </div>
-          <h3>{{ post.title }}</h3>
-          <p class="news-date"><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</p>
-          <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-          <a href="{{ post.url | prepend: site.baseurl }}" class="btn-readmore">Read Full Update</a>
-        </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
 <!-- ════════ FOOTER ══════════════════════════════════════════ -->
 <footer>
   <div class="footer-left">DSD2026 · Team M1 · UTAD × Jilin University</div>
