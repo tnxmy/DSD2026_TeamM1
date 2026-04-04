@@ -8,6 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+    <style>
+        /* 确保页面撑满视口，页脚在底部 */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
     <!-- ════════ NAVBAR ════ -->
@@ -25,33 +36,33 @@
     </nav>
 
     <!-- ════════ MAIN CONTENT ════ -->
-    {% if page.layout == "post" or page.title %}
-    <!-- 文章页面：使用 section 包装，保持与其他页面一致的间距 -->
-    <section id="post" style="padding-top: 120px; padding-bottom: 96px;">
-        <div class="container">
-            <!-- 返回按钮 -->
-            <a href="{{ site.baseurl }}/news.html" class="btn-readmore" style="margin-bottom: 2rem; display: inline-flex;">
-                <i class="fa-solid fa-arrow-left" style="margin-right: 0.5rem;"></i> Back to News
-            </a>
-            
-            <!-- 文章卡片：复用 news.html 的样式 -->
-            <article class="news-card" style="margin-top: 1rem;">
-                <div class="news-card-icon">
-                    <i class="fa-solid fa-newspaper"></i>
-                </div>
-                <h1 style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 0.5rem;">{{ page.title }}</h1>
-                <p class="news-date" style="margin-bottom: 2rem;">
-                    <i class="fa-regular fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}
-                </p>
-                <div class="post-content" style="line-height: 1.8; color: var(--text);">
-                    {{ content }}
-                </div>
-            </article>
-        </div>
-    </section>
-    {% else %}
-    {{ content }}
-    {% endif %}
+    <main>
+        {% if page.layout == "post" or page.title %}
+        <!-- 文章页面 -->
+        <section id="post" style="padding-top: 120px; padding-bottom: 96px;">
+            <div class="container">
+                <a href="{{ site.baseurl }}/news.html" class="btn-readmore" style="margin-bottom: 2rem; display: inline-flex;">
+                    <i class="fa-solid fa-arrow-left" style="margin-right: 0.5rem;"></i> Back to News
+                </a>
+                
+                <article class="news-card" style="margin-top: 1rem;">
+                    <div class="news-card-icon">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                    <h1 style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 0.5rem;">{{ page.title }}</h1>
+                    <p class="news-date" style="margin-bottom: 2rem;">
+                        <i class="fa-regular fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}
+                    </p>
+                    <div class="post-content" style="line-height: 1.8; color: var(--text);">
+                        {{ content }}
+                    </div>
+                </article>
+            </div>
+        </section>
+        {% else %}
+        {{ content }}
+        {% endif %}
+    </main>
 
     <!-- ════════ FOOTER ════ -->
     <footer>
