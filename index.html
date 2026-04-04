@@ -394,15 +394,14 @@ layout: default
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label reveal">Project Timeline</p>
-      <h2 class="reveal">The Interface is Not a Layer on Top of the System.<br>
-        <em class="quote-em">For the Patient, It Is the System.</em>
+      <p class="section-label reveal">News</p>
+      <h2 class="reveal">Updates & Announcements<br>
+        <em class="quote-em">Latest news and progress from Team M1</em>
       </h2>
     </div>
 
     <!-- News Cards Grid -->
     <div class="news-grid">
-      <!-- 循环显示最新的 3 篇文章，如需显示更多请修改 limit 数字 -->
       {% for post in site.posts limit: 3 %}
         <article class="news-card reveal">
           <!-- Card Icon -->
@@ -423,7 +422,7 @@ layout: default
     
     <!-- View All Button (Optional) -->
     <div style="text-align: center; margin-top: 3rem;">
-      <a href="{{ site.baseurl }}/news.html" class="btn-readmore" style="font-size: 1.1rem;">View All Updates →</a>
+      <a href="{{ site.baseurl }}/news.html" class="btn-readmore" style="font-size: 1.1rem;">View All News</a>
     </div>
   </div>
 </section>
