@@ -825,7 +825,7 @@ footer {
 /* 1. Section Container (匹配 Mission 的背景和间距) */
 #news {
     padding: 100px 0;
-    background-color: #0f172a; /* 深色背景，与 Mission 一致 */
+    background: var(--bg2);
     color: #e2e8f0;
 }
 
