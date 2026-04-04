@@ -27,6 +27,7 @@ layout: default
     <li><a href="{{ site.baseurl }}/#news" class="active">News</a></li>
   </ul>
 </nav>
+<!-- ════════ NEWS SECTION (Identical to news.html) ════════ -->
 <section id="news">
   <div class="container">
     <!-- Section Header -->
@@ -39,7 +40,7 @@ layout: default
 
     <!-- News Cards Grid -->
     <div class="news-grid">
-      {% for post in site.posts %}
+      {% for post in site.posts limit: 30 %}
         <article class="news-card reveal">
           <!-- Card Icon -->
           <div class="news-card-icon">
@@ -50,11 +51,16 @@ layout: default
           <!-- Date -->
           <p class="news-date"><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</p>
           <!-- Excerpt -->
-          <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
           <!-- Link -->
           <a href="{{ post.url | prepend: site.baseurl }}" class="btn-readmore">Read Full News</a>
         </article>
       {% endfor %}
+    </div>
+    
+    <!-- View All Button (Optional) -->
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="{{ site.baseurl }}/news.html" class="btn-readmore" style="font-size: 1.1rem;">View All News</a>
     </div>
   </div>
 </section>
