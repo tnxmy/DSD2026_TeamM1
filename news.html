@@ -1,80 +1,37 @@
 ---
 layout: default
 ---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News · DSD2026 · Team M1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
+</head>
+<body>
 
-<!-- ════════ 1. FIXED NAVBAR (Added directly here to fix links) ════════ -->
-<!-- 注意：这里将导航栏直接写入 News 页面以确保链接修复，同时复用了 Index 的样式 -->
-<style>
-  /* 内联样式仅用于 News 页面，确保导航栏样式与首页一致 */
-  .news-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(15, 23, 42, 0.8); /* bg-gray-900/80 */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #334155;
-  }
-  .news-nav .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-  }
-  .news-nav .nav-logo {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: white;
-  }
-  .news-nav .nav-logo span {
-    color: #64ffda;
-  }
-  .news-nav .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-  }
-  .news-nav .nav-links a {
-    color: #e2e8f0;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-  }
-  .news-nav .nav-links a:hover {
-    color: #64ffda;
-  }
-  /* 修复 Body 下移，防止内容被导航栏遮挡 */
-  body { padding-top: 4rem; }
-</style>
-
-<nav class="news-nav">
-  <div class="nav-container">
-    <div class="nav-logo">DSD2026 · <span>Team M1</span></div>
-    <ul class="nav-links">
-      <!-- 关键修复：所有链接都添加了 {{ site.baseurl }} -->
-      <li><a href="{{ site.baseurl }}/#project">Project</a></li>
-      <li><a href="{{ site.baseurl }}/#architecture">Architecture</a></li>
-      <li><a href="{{ site.baseurl }}/#mission">Mission</a></li>
-      <li><a href="{{ site.baseurl }}/#team">Team</a></li>
-      <li><a href="{{ site.baseurl }}/#responsibilities">Responsibilities</a></li>
-      <li><a href="{{ site.baseurl }}/#workflow">Workflow</a></li>
-    </ul>
-  </div>
+<!-- ════════ NAVBAR ════ -->
+<nav>
+  <div class="nav-logo">DSD2026 · <span>Team M1</span></div>
+  <ul class="nav-links">
+    <li><a href="{{ site.baseurl }}/#project">Project</a></li>
+    <li><a href="{{ site.baseurl }}/#architecture">Architecture</a></li>
+    <li><a href="{{ site.baseurl }}/#mission">Mission</a></li>
+    <li><a href="{{ site.baseurl }}/#team">Team</a></li>
+    <li><a href="{{ site.baseurl }}/#responsibilities">Responsibilities</a></li>
+    <li><a href="{{ site.baseurl }}/#workflow">Workflow</a></li>
+    <li><a href="{{ site.baseurl }}/#news" class="active">News</a></li>
+  </ul>
 </nav>
 
-<!-- ════════ 2. NEWS CONTENT (Without the old header) ════════ -->
-<!-- 注意：这里移除了 Development Log 等旧标题 -->
-
-<!-- ════════ NEWS LIST (Card Layout) ════════ -->
-<section id="news" class="news-grid-section">
+<!-- ════════ NEWS SECTION (保持原有功能不变) ════════ -->
+<section id="news">
   <div class="container">
-    <!-- Section Header (Mission Style) -->
+    <!-- Section Header -->
     <div class="section-header">
       <p class="section-label reveal">Project Timeline</p>
       <h2 class="reveal">The Interface is Not a Layer on Top of the System.<br>
@@ -86,12 +43,17 @@ layout: default
     <div class="news-grid">
       {% for post in site.posts %}
         <article class="news-card reveal">
+          <!-- Card Icon -->
           <div class="news-card-icon">
             <i class="fa-solid fa-newspaper"></i>
           </div>
+          <!-- Title -->
           <h3>{{ post.title }}</h3>
+          <!-- Date -->
           <p class="news-date"><i class="fa-regular fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</p>
+          <!-- Excerpt -->
           <p class="news-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <!-- Link -->
           <a href="{{ post.url | prepend: site.baseurl }}" class="btn-readmore">Read Full Update</a>
         </article>
       {% endfor %}
@@ -99,5 +61,39 @@ layout: default
   </div>
 </section>
 
-<!-- ════════ 3. FOOTER (Kept as is) ════════ -->
-<!-- 页脚代码保持不变，无需再次粘贴 -->
+<!-- ════════ FOOTER ══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-left">DSD2026 · Team M1 · UTAD × Jilin University</div>
+  <div class="footer-right">
+    <ul class="footer-links">
+      <li><a href="{{ site.baseurl }}/#project">Project</a></li>
+      <li><a href="{{ site.baseurl }}/#architecture">Architecture</a></li>
+      <li><a href="{{ site.baseurl }}/#mission">Mission</a></li>
+      <li><a href="{{ site.baseurl }}/#team">Team</a></li>
+      <li><a href="{{ site.baseurl }}/#responsibilities">Responsibilities</a></li>
+      <li><a href="{{ site.baseurl }}/#workflow">Workflow</a></li>
+      <li><a href="{{ site.baseurl }}/#news">News</a></li>
+    </ul>
+    <div class="footer-icons">
+      <a href="https://github.com/diogopinhel/DSD2026_TeamM1" aria-label="GitHub">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      </a>
+      <a href="mailto:d.pinhel19@gmail.com" aria-label="Email">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════ SCROLL PROGRESS BUTTON ════════════════ -->
+<button id="scroll-btn" aria-label="Back to top">
+  <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="22" cy="22" r="20" class="sbg"/>
+    <circle cx="22" cy="22" r="19" class="strack"/>
+    <circle cx="22" cy="22" r="19" class="sring" id="sring"/>
+    <polyline points="15,25 22,17 29,25" class="sarrow"/>
+  </svg>
+</button>
+<script src="{{ site.baseurl }}/transitions.js"></script>
+</body>
+</html>
