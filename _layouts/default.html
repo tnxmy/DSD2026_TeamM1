@@ -3,56 +3,68 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DSD2026 · Team M1</title>
-    <!-- 这里是原 index.html 中的 CSS 引用 -->
+    <title>{% if page.title %}{{ page.title }} · {% endif %}DSD2026 · Team M1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
 </head>
 <body>
-    <!-- ════════ NAVBAR (Copied from index.html) ════ -->
+    <!-- ════════ NAVBAR ════ -->
     <nav>
         <div class="nav-logo">DSD2026 · <span>Team M1</span></div>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Project</a></li>
-            <li><a href="#architecture">Architecture</a></li>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#responsibilities">Responsibilities</a></li>
-            <li><a href="#workflow">Workflow</a></li>
-            <li><a href="news.html">News</a></li> <!-- News Link Added -->
+            <li><a href="{{ site.baseurl }}/#project">Project</a></li>
+            <li><a href="{{ site.baseurl }}/#architecture">Architecture</a></li>
+            <li><a href="{{ site.baseurl }}/#mission">Mission</a></li>
+            <li><a href="{{ site.baseurl }}/#team">Team</a></li>
+            <li><a href="{{ site.baseurl }}/#responsibilities">Responsibilities</a></li>
+            <li><a href="{{ site.baseurl }}/#workflow">Workflow</a></li>
+            <li><a href="{{ site.baseurl }}/news.html" {% if page.layout == "post" or page.url contains "news" %}class="active"{% endif %}>News</a></li>
         </ul>
     </nav>
 
-    <!-- ════════ MAIN CONTENT (This will be replaced by news.html) ════ -->
-    <!-- 检查是否是文章页面，如果是，则应用特定样式 -->
+    <!-- ════════ MAIN CONTENT ════ -->
     {% if page.layout == "post" or page.title %}
-    <div class="container" style="padding-top: 100 px;">
-      <a href="/DSD2026_TeamM1/news.html" class="btn-readmore" style="margin-bottom: 2 rem;"><i class="fa-solid fa-arrow-left"></i> Back</a>
-      
-      <article class="news-card">
-        <div class="news-card-icon"><i class="fa-solid fa-newspaper"></i></div>
-        <h1>{{ page.title }}</h1>
-        <p class="news-date"><i class="fa-regular fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}</p>
-        {{ content }}
-      </article>
-    </div>
+    <!-- 文章页面：使用 section 包装，保持与其他页面一致的间距 -->
+    <section id="post" style="padding-top: 120px; padding-bottom: 96px;">
+        <div class="container">
+            <!-- 返回按钮 -->
+            <a href="{{ site.baseurl }}/news.html" class="btn-readmore" style="margin-bottom: 2rem; display: inline-flex;">
+                <i class="fa-solid fa-arrow-left" style="margin-right: 0.5rem;"></i> Back to News
+            </a>
+            
+            <!-- 文章卡片：复用 news.html 的样式 -->
+            <article class="news-card" style="margin-top: 1rem;">
+                <div class="news-card-icon">
+                    <i class="fa-solid fa-newspaper"></i>
+                </div>
+                <h1 style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 0.5rem;">{{ page.title }}</h1>
+                <p class="news-date" style="margin-bottom: 2rem;">
+                    <i class="fa-regular fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}
+                </p>
+                <div class="post-content" style="line-height: 1.8; color: var(--text);">
+                    {{ content }}
+                </div>
+            </article>
+        </div>
+    </section>
     {% else %}
     {{ content }}
     {% endif %}
-    <!-- ════════ FOOTER (Copied from index.html) ════════ -->
+
+    <!-- ════════ FOOTER ════ -->
     <footer>
         <div class="footer-left">DSD2026 · Team M1 · UTAD × Jilin University</div>
         <div class="footer-right">
             <ul class="footer-links">
-                <li><a href="index.html#project">Project</a></li>
-                <li><a href="index.html#architecture">Architecture</a></li>
-                <li><a href="index.html#mission">Mission</a></li>
-                <li><a href="index.html#team">Team</a></li>
-                <li><a href="index.html#responsibilities">Responsibilities</a></li>
-                <li><a href="index.html#workflow">Workflow</a></li>
-                <li><a href="news.html">News</a></li>
+                <li><a href="{{ site.baseurl }}/#project">Project</a></li>
+                <li><a href="{{ site.baseurl }}/#architecture">Architecture</a></li>
+                <li><a href="{{ site.baseurl }}/#mission">Mission</a></li>
+                <li><a href="{{ site.baseurl }}/#team">Team</a></li>
+                <li><a href="{{ site.baseurl }}/#responsibilities">Responsibilities</a></li>
+                <li><a href="{{ site.baseurl }}/#workflow">Workflow</a></li>
+                <li><a href="{{ site.baseurl }}/news.html">News</a></li>
             </ul>
             <div class="footer-icons">
                 <a href="https://github.com/diogopinhel/DSD2026_TeamM1" aria-label="GitHub">
@@ -65,7 +77,7 @@
         </div>
     </footer>
 
-    <!-- ════════ SCROLL PROGRESS BUTTON (Copied from index.html) ════════ -->
+    <!-- ════════ SCROLL PROGRESS BUTTON ════ -->
     <button id="scroll-btn" aria-label="Back to top">
         <svg viewBox="0 0 44 44" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
             <circle cx="22" cy="22" r="20" class="sbg"/>
@@ -75,7 +87,6 @@
         </svg>
     </button>
 
-    <!-- Scripts -->
-    <script src="transitions.js"></script>
+    <script src="{{ site.baseurl }}/transitions.js"></script>
 </body>
 </html>
