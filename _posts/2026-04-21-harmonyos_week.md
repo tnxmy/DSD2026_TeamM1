@@ -56,22 +56,21 @@ date: 2026-04-21 13:59:00
 
 ### Weekly Notes
 
-This week, I made an initial attempt at UI development for the HarmonyOS system. First, we downloaded the integrated development environment, DevEco Studio, from [this website](https://developer.huawei.com/consumer/cn/deveco-studio/). For UI development, Huawei's official website provides rich [sample code](https://gitcode.com/HarmonyOS_Samples/HarmonyOSComponentUXExamples), which includes various containers and components, offering excellent references for development. Building upon this, I have completed a preliminary version of an app. In the coming week, we will design a preliminary and complete app page logic and write the corresponding code.
+This week, I made an initial attempt at UI development for the HarmonyOS system. First, we downloaded the integrated development environment, DevEco Studio, from <a href="https://developer.huawei.com/consumer/cn/deveco-studio/" style="color: #999999; text-decoration: none;">this website</a>. For UI development, Huawei's official website provides rich <a href="https://gitcode.com/HarmonyOS_Samples/HarmonyOSComponentUXExamples" style="color: #999999; text-decoration: none;">sample code</a>, which includes various containers and components, offering excellent references for development. Building upon this, I have completed a preliminary version of an app. In the coming week, we will design a preliminary and complete app page logic and write the corresponding code.
 
 ### Project Showcase
 
 **Project Structure**
 
-![HarmonyOS Project Structure](图片链接1)
+![HarmonyOS Project Structure](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/111222.png)
 
 > The image above shows the complete directory structure of `MyHarmonyApp`, covering the `AppScope` global configuration, the `entry` module, and page files under `src/main/ets/pages`. The overall structure is clear and well-organized.
 
 **UI Interface Preview**
 
-![HarmonyOS App Personal Center Login Page](图片链接2)
+![HarmonyOS App Personal Center Login Page](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/222111.png)
 
 > The image above shows the emulator rendering of the "Personal Center" login page, including username/password input fields, a login button, and a bottom navigation bar (Home · Test · Records · Profile), implementing preliminary page interaction logic.
-
 ### Reference Resources
 
 | Resource Name | Link |
