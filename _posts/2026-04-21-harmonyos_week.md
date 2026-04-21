@@ -27,7 +27,7 @@ date: 2026-04-21 13:59:00
 
 ### 本周记录
 
-在这周，我对鸿蒙系统的UI开发有了一次尝试。首先，我们在[这个网址](https://developer.huawei.com/consumer/cn/deveco-studio/)上下载了集成开发环境 DevEco Studio。对于 UI 开发，华为官网上有丰富的[实例代码](https://gitcode.com/HarmonyOS_Samples/HarmonyOSComponentUXExamples)，里面包含各种容器和组件，为开发提供了很好的参考。在此基础上，我简单地完成了一个 App 的雏形。在接下来的一周里，我们将设计好一个初步完整的 App 页面逻辑，并编写相应代码。
+在这周，我对鸿蒙系统的UI开发有了一次尝试。首先，我们在<a href="https://developer.huawei.com/consumer/cn/deveco-studio/" style="color: #999999; text-decoration: none;">这个网址</a>上下载了集成开发环境 DevEco Studio。对于 UI 开发，华为官网上有丰富的<a href="https://gitcode.com/HarmonyOS_Samples/HarmonyOSComponentUXExamples" style="color: #999999; text-decoration: none;">实例代码</a>，里面包含各种容器和组件，为开发提供了很好的参考。在此基础上，我简单地完成了一个 App 的雏形。在接下来的一周里，我们将设计好一个初步完整的 App 页面逻辑，并编写相应代码。
 
 ### 项目展示
 
