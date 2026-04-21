@@ -62,13 +62,13 @@ This week, I made an initial attempt at UI development for the HarmonyOS system.
 
 **Project Structure**
 
-![HarmonyOS Project Structure](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/111222.png)
+![HarmonyOS Project Structure](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/11122.png)
 
 > The image above shows the complete directory structure of `MyHarmonyApp`, covering the `AppScope` global configuration, the `entry` module, and page files under `src/main/ets/pages`. The overall structure is clear and well-organized.
 
 **UI Interface Preview**
 
-![HarmonyOS App Personal Center Login Page](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/222111.png)
+![HarmonyOS App Personal Center Login Page](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/22211.png)
 
 > The image above shows the emulator rendering of the "Personal Center" login page, including username/password input fields, a login button, and a bottom navigation bar (Home · Test · Records · Profile), implementing preliminary page interaction logic.
 ### Reference Resources
