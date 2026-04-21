@@ -5,7 +5,7 @@ date: 2026-04-21 13:59:00
 ---
 
 
-<div align="center">
+
 
 ---
 
@@ -17,7 +17,6 @@ date: 2026-04-21 13:59:00
 
 ---
 
-</div>
 
 <br/>
 
@@ -33,13 +32,13 @@ date: 2026-04-21 13:59:00
 
 **项目结构**
 
-![HarmonyOS 项目结构图](图片链接1)
+![HarmonyOS Project Structure](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/11122.png)
 
 > 上图展示了 `MyHarmonyApp` 的完整目录结构，涵盖 `AppScope` 全局配置、`entry` 入口模块以及 `src/main/ets/pages` 下的各页面文件，整体结构清晰规范。
 
 **UI 界面预览**
 
-![鸿蒙 App 个人中心登录页](图片链接2)
+![HarmonyOS Project Structure](https://tnxmy.github.io/DSD2026_TeamM1/img/Zhang/22211.png)
 
 > 上图为「个人中心」登录页面的模拟器运行效果，包含用户名/密码输入框、登录按钮及底部导航栏（主页 · 测试 · 记录 · 个人），实现了初步的页面交互逻辑。
 
@@ -82,7 +81,7 @@ This week, I made an initial attempt at UI development for the HarmonyOS system.
 
 <br/>
 
-<div align="center">
+
 
 ---
 
@@ -90,5 +89,3 @@ This week, I made an initial attempt at UI development for the HarmonyOS system.
 💪 *Keep Building · Keep Learning · Keep Growing*
 
 ---
-
-</div>
