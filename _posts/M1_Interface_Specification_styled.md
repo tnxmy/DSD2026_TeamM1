@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Interface_Specification—M1"
+date: 2026-04-25 9:00:00
+excerpt: ""
+---
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
