@@ -261,7 +261,7 @@ Based on existing collaboration documents, the interface specification consolida
 
 **Owner:** Enhe Zhang
 
-The first-round iteration prototype has been fully developed. Implemented modules include:
+The first round of iterative prototypes has been partially completed. Implemented modules include:
 
 - **Account Module:** login page, registration page (with validation and secure input), and account home page (avatar, welcome message, logout).
 - **Test / Rehab Training Module:** training home page and BLE sensor connection page (with scanning interaction).
@@ -276,7 +276,7 @@ The prototype is rendered in English and satisfies the UI requirements for the f
 
 **Owner:** Wang Yiding
 
-**Reason:** This task involves standardizing and merging SRS documents from six independent groups, which entails high coordination overhead and dependency on external deliverables. As of the reporting deadline, the M1 and S1 groups have completed their SRS standardization, while other groups are still revising their documents. Full integration is therefore blocked until all groups provide stable versions. The owner will continue tracking each group\'s progress and finalize the integrated document once all inputs are received
+**Reason:** This task involves standardizing and merging SRS documents from six independent groups, which entails high coordination overhead and dependency on external deliverables. As of the reporting deadline, the M1, S1 and S2 groups have completed their SRS standardization, while other groups are still revising their documents. Full integration is therefore blocked until all groups provide stable versions. The owner will continue tracking each group\'s progress and finalize the integrated document once all inputs are received
 
 ### 4.2 Task 6 — Prepare Mid-Term Presentation
 
