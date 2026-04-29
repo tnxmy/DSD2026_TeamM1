@@ -26,8 +26,6 @@ excerpt: ""
     color: var(--text-primary);
     font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     line-height: 1.7;
-    max-width: 900px;
-    margin: 0 auto;
     padding: 2rem 2.5rem;
   }
 
