@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "M1_APP_Prototype_Introduction_v0.2"
+title: "M1 APP Prototype Introduction v0.2"
 date: 2026-04-29 7:00:00
 excerpt: ""
 ---
@@ -319,7 +319,8 @@ The following flow is organized based on the video demonstration:
 8. On Test page, taps "Connect Sensor" → enters scanning page
 9. Taps "Scan for Sensors" → begins scanning nearby BLE devices
 ```
-<video src="https://tnxmy.github.io/DSD2026_TeamM1/img/1.mp4" controls width="100%" style="max-width: 1200px; border-radius: 8px;">
+
+<video src="https://tnxmy.github.io/DSD2026_TeamM1/img/1.mp4" controls width="100%" style="max-width: 900px; border-radius: 8px;">
 
 
 ---
