@@ -203,17 +203,16 @@ excerpt: ""
   }
 </style>
 
-# DSD 2025–2026 Team M1 Weekly Report
 
 <div class="meta-box">
 
-**Week:** 1 (April 21 – April 27, 2026)
+Week: 1 (April 21 – April 27, 2026)
 
-**Report Owner:** Wang Yiding
+Report Owner: Wang Yiding
 
-**Team:** M1 (APP Frontend)
+Team: M1 (APP Frontend)
 
-**Project:** Rehabilitation Exercise Monitoring System
+Project: Rehabilitation Exercise Monitoring System
 
 </div>
 
@@ -221,97 +220,7 @@ excerpt: ""
 
 ## 1. Task List (Attachment)
 
-The following task list was distributed to all team members at the beginning of Week 1. It defines the scope, priority, and acceptance criteria for each assignment.
-
-### 1.1 Terminology
-
-- **Internal SRS (Group SRS):** M1 internal SRS document  
-  <https://diogopinhel.github.io/DSD2026_TeamM1/2026/04/21/Software.html>
-- **S2 DFD:** S2 Group Data Flow Diagram  
-  <https://rsdbkhusky.github.io/DSD2026_TeamS2/img/dataflow_diagram_2.png>  
-  (Divided into upper "System DFD" covering all groups and lower "S2 DFD" covering only S2.)
-
-### 1.2 Task Summary
-
-1. Improve internal SRS
-2. Integrate SRS documents from all six groups
-3. Produce M1 system design — high-level design
-4. Produce M1 interface specification and develop application prototype framework
-5. Prepare for the mid-term presentation and speak as team representative
-
-### 1.3 Urgent Tasks
-
-**UT-1: Improve Internal SRS**
-
-- Only the internal section needs improvement.
-- Internal use cases must cover the technical implementation paths of all external use cases and clearly define data exchange with external systems.
-- Update sub-actors to include **all groups that exchange data with M1**.
-- Update internal use cases to clearly specify data flow directions between actors in each use case.
-- Must conform to the **S2 DFD**.
-
-### 1.4 Main Tasks
-
-**MT-1: Integrate SRS Documents from All Six Groups**
-
-- The integrated document is divided into an **External Part** and an **Internal Part**.
-- The external part shall consist of all external use cases without conflicts.
-- The internal part shall consist of all internal use cases; whenever data is received, the corresponding use case from the source group must be cited.
-- The internal part must not contain conflicts. If conflicts exist, contact the responsible person of the corresponding group for correction.
-  - If the responsible person can make changes before **Tuesday 00:00 (China Time)**, the fix should be synchronized into the integration.
-  - Otherwise, resolve the conflict independently (e.g., using the S2 DFD as the consensus reference).
-- Integrate all basic content: re-sectioning, unified actor list, consolidated assumptions & open issues, merged glossary & references.
-- Add an overall abstract explaining the document purpose and section overview.
-- Add a table of contents with jump links.
-- Apply rendering to improve readability.
-
-**MT-2: Produce M1 System Design — High-Level Design**
-
-- The system design document consists of two parts: **High-Level Design** and **Detailed Design**. This task covers only the high-level design and its diagrams.
-- The high-level design must be based on the internal section of the M1 SRS.
-- Decompose the system into blocks and label data interfaces between blocks.
-- Block decomposition rules:
-  - Must cover all internal use cases in the M1 SRS.
-  - Each block must map to its corresponding use case(s).
-- Data interface rules:
-  - Each interface must specify the content being transferred.
-  - Overall data interfaces must conform to the M1 portion of the **S2 DFD**.
-- Document must contain:
-  - Overall module table
-  - Detailed module descriptions (corresponding use cases, basic functions, input/output data)
-- Draw a data flow diagram referencing the S2 DFD format, including:
-  - External actor modules (other groups) with labeled data provided to / received from them
-  - Internal modules (all blocks from the high-level design)
-  - Clear system boundary distinguishing M1 from other groups
-  - Data interfaces between modules
-- Reference guide: <https://blog.csdn.net/zhaohongfei_358/article/details/109284635>
-
-**MT-3: Produce M1 Interface Specification & Develop Application Prototype Framework**
-
-- **Interface Specification:**
-  - Format reference: <https://rsdbkhusky.github.io/DSD2026_TeamS2/news/s2-interface-spec.html>
-  - Content: all data interfaces with other groups, detailed per the S2 DFD.
-  - Must include: data flow direction for each interface; specific interface specification details.
-  - If another group indicates inability to collaborate, this step may be omitted after confirming it is infeasible.
-- **Prototype Development:**
-  - Provide page design diagrams or a live framework demonstration.
-  - Language: English.
-  - Must include one set of external-module use cases conforming to the external part of the M1 SRS.
-  - Definition of "one set": all use cases under one group identifier (naming convention `UC-M1-{GroupID}-{Seq}`).
-
-**MT-4: Prepare for Mid-Term Presentation & Speak as Team Representative**
-
-- Each group needs one representative to present achievements at the mid-term meeting.
-- The representative shall prepare a PPT and speak at the meeting.
-- Recommended content (not mandatory): project overview, requirements analysis, system design, prototype demonstration, future plans.
-- Professor Zhang noted the meeting will cover: group progress reports, tester interconnection results, and if time permits, discussion of second-round iteration requirements.
-
-### 1.5 Future Tasks
-
-No future tasks submitted for this week.
-
-### 1.6 Work Division Rationale
-
-First, we need to bring the SRS to an optimal state, then complete the high-level system design, followed by the detailed design (i.e., interface specification). Both the high-level design and the interface specification should follow the **S2 DFD** to avoid conflicts in inter-group data interfaces. The specific interface details affect program implementation, so interface design and prototype development are grouped together. Finally, the mid-term meeting next week requires one person to present the team\'s achievements.
+[Download Link]()
 
 ---
 
@@ -321,8 +230,8 @@ First, we need to bring the SRS to an optimal state, then complete the high-leve
 |:---:|:---|:---|:---|:---|:---|
 | 1 | Improve M1 Internal SRS | Refine internal use cases to cover all external use-case technical paths; clarify data exchange with external systems. | Wang Yiding | <span class="status-badge status-done">Completed</span> | Not submitted |
 | 2 | Integrate Six-Group SRS | Standardize and merge SRS documents from all six groups. | Wang Yiding | <span class="status-badge status-partial">Partially Completed</span> | [M1 SRS v1.3](https://diogopinhel.github.io/DSD2026_TeamM1/2026/04/27/M1_SRS_v1.3.html) · [S1 Update](https://dsd-s1-test.github.io/DSD-S1.github.io/#/news/2026-04-27-updsrs) · [S2 Update](https://rsdbkhusky.github.io/DSD2026_TeamS2/news/srs-update.html) |
-| 3 | M1 High-Level Design | Complete the high-level system design for the M1 group. | Diogo Pinhel | <span class="status-badge status-partial">Preliminarily Completed</span> | [M1-High-Level-Design](https://diogopinhel.github.io/DSD2026_TeamM1/2026/04/27/M1-High-Level-Design.html) |
-| 4 | Interface Specification | Consolidate existing documents to define M1 inter-group interface specifications. | Enhe Zhang | <span class="status-badge status-partial">Preliminarily Completed</span> | [M1 Interface Spec](https://diogopinhel.github.io/DSD2026_TeamM1/2026/04/26/M1_Interface_Specification.html) |
+| 3 | M1 High-Level Design | Complete the high-level system design for the M1 group. | Diogo Pinhel | <span class="status-badge status-done">Preliminarily Completed</span> | [M1-High-Level-Design](https://diogopinhel.github.io/DSD2026_TeamM1/2026/04/27/M1-High-Level-Design.html) |
+| 4 | Interface Specification | Consolidate existing documents to define M1 inter-group interface specifications. | Enhe Zhang | <span class="status-badge status-done">Preliminarily Completed</span> | [M1 Interface Spec](https://diogopinhel.github.io/DSD2026_TeamM1/2026/04/26/M1_Interface_Specification.html) |
 | 5 | Partial Prototype Development | Develop prototype pages satisfying first-round iteration UI requirements. | Enhe Zhang | <span class="status-badge status-done">Completed</span> | [Prototype Intro](https://tnxmy.github.io/DSD2026_TeamM1/2026/04/29/M1_APP_Prototype_Introduction.html) |
 | 6 | Prepare Mid-Term Presentation | Create PPT and speak at the meeting. | — | <span class="status-badge status-delayed">Deferred to Next Week</span> | N/A |
 
@@ -367,9 +276,7 @@ The prototype is rendered in English and satisfies the UI requirements for the f
 
 **Owner:** Wang Yiding
 
-**Reason:** This task involves standardizing and merging SRS documents from six independent groups, which entails high coordination overhead and dependency on external deliverables. As of the reporting deadline, the M1 and S1 groups have completed their SRS standardization, while other groups are still revising their documents. Full integration is therefore blocked until all groups provide stable versions. The owner will continue tracking each group\'s progress and finalize the integrated document once all inputs are received.
-
-**Mitigation:** The S2 DFD is being used as the authoritative reference for resolving cross-group data-flow conflicts during integration.
+**Reason:** This task involves standardizing and merging SRS documents from six independent groups, which entails high coordination overhead and dependency on external deliverables. As of the reporting deadline, the M1 and S1 groups have completed their SRS standardization, while other groups are still revising their documents. Full integration is therefore blocked until all groups provide stable versions. The owner will continue tracking each group\'s progress and finalize the integrated document once all inputs are received
 
 ### 4.2 Task 6 — Prepare Mid-Term Presentation
 
@@ -379,17 +286,6 @@ The prototype is rendered in English and satisfies the UI requirements for the f
 
 ---
 
-## 5. Next Week Plan (Week 2 Preview)
-
-| Priority | Task | Target Owner | Notes |
-|:---|:---|:---|:---|
-| High | Finalize six-group SRS integration | Wang Yiding | Await remaining group submissions; resolve conflicts using S2 DFD. |
-| High | Prepare mid-term presentation PPT | TBD | Include project overview, requirements, system design, prototype demo, future plan. |
-| Medium | Review and finalize high-level design | Diogo Pinhel | Incorporate feedback from Professor Zhang and other groups. |
-| Medium | Refine interface specification | Enhe Zhang | Finalize details after confirming collaboration feasibility with each group. |
-| Low | Continue prototype development | Enhe Zhang | Expand Main and Record modules; connect Account module to backend (V2). |
-
----
 
 *Report compiled according to Weekly Report Rules v0.1.*
 *Submission Date: April 29, 2026*
