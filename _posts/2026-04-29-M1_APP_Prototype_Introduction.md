@@ -183,6 +183,7 @@ excerpt: ""
   }
 </style>
 
+Author：Enhe Zhang
 
 ## 1. Application Overview
 
@@ -318,6 +319,8 @@ The following flow is organized based on the video demonstration:
 8. On Test page, taps "Connect Sensor" → enters scanning page
 9. Taps "Scan for Sensors" → begins scanning nearby BLE devices
 ```
+<video src="https://tnxmy.github.io/DSD2026_TeamM1/img/1.mp4" controls width="100%" style="max-width: 1200px; border-radius: 8px;">
+
 
 ---
 
