@@ -183,7 +183,6 @@ excerpt: ""
   }
 </style>
 
-# M1 Rehabilitation Exercise APP — Prototype Introduction
 
 ## 1. Application Overview
 
